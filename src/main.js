@@ -1,19 +1,34 @@
+import { constants } from '../constants/constants.js';
 import { World } from './World/World.js';
+// import * as dat from 'dat.gui';
+
+let gui = new dat.GUI();
 
 async function main() {
-  // Get a reference to the container element
-  const container = document.querySelector('#scene-container');
+    const container = document.querySelector('#scene-container');
 
-  // create a new world
-  const world = new World(container);
+    const world = new World(container);
 
-  // complete async tasks
-  await world.init();
+    let guiControls = new function () {
+        this.disperse = () => {
+            world.flock.disperse();
+        }
+        this.restart = () => world.restart();
+    }
 
-  // start the animation loop
-  world.start();
+    
+    gui.add(constants, 'MAX_BOIDS', 50, 800)
+        .onFinishChange((_) => world.restart())
+        .name("Number");
+    gui.add(constants, 'DISPERSION', 0.1, 0.5).name("Dispersion");
+    gui.add(constants, 'RANGE', 100, 500).name("Visual Range");
+    gui.add(guiControls, "disperse").name("Disperse");
+    gui.add(guiControls, "restart").name("Reset");
+    await world.init();
+
+    world.start();
 }
 
 main().catch((err) => {
-  console.error(err);
+    console.error(err);
 });
