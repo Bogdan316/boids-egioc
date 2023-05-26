@@ -1,4 +1,4 @@
-import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.136.2/examples/jsm/loaders/GLTFLoader.js';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 import { setupModel } from './setupModel.js';
 

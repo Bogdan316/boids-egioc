@@ -1,4 +1,4 @@
-import { PerspectiveCamera } from 'https://cdn.skypack.dev/three@0.136.2';
+import { PerspectiveCamera } from 'three';
 
 function createCamera() {
   const camera = new PerspectiveCamera(35, 1, 0.1, 100);
