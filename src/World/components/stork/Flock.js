@@ -1,6 +1,6 @@
 // import { Group, MathUtils, Vector3 } from 'three';
-import { Boid } from './setupModel';
-import { constants } from '../../../../constants/constants';
+import { Boid } from './setupModel.js';
+import { constants } from '../../../../constants/constants.js';
 
 const getRandomNum = (max = 0, min = 0) => Math.floor(Math.random() * (max + 1 - min)) + min;
 
