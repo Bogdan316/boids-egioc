@@ -11,7 +11,7 @@ function getModelAndClip(data, scale) {
 async function loadStork() {
   const loader = new THREE.GLTFLoader();
 
-  const parrotData = await loader.loadAsync('/assets/models/Parrot.glb');
+  const parrotData = await loader.loadAsync('./assets/models/Parrot.glb');
 
 
   return getModelAndClip(parrotData, 30);
