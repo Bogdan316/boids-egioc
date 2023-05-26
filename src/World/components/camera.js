@@ -1,11 +1,11 @@
-import { PerspectiveCamera } from 'three';
+import { PerspectiveCamera } from 'https://cdn.skypack.dev/three@0.136.2';
 
 function createCamera() {
-    const camera = new PerspectiveCamera(35, 1, 0.1, 100000);
+  const camera = new PerspectiveCamera(35, 1, 0.1, 100);
 
-    camera.position.set(0, 0, 2500);
+  camera.position.set(-1.5, 1.5, 6.5);
 
-    return camera;
+  return camera;
 }
 
 export { createCamera };

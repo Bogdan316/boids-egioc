@@ -1,4 +1,4 @@
-import { Clock } from "three";
+import { Clock } from 'https://cdn.skypack.dev/three@0.136.2';
 
 const clock = new Clock();
 
@@ -12,9 +12,11 @@ class Loop {
 
   start() {
     this.renderer.setAnimationLoop(() => {
-        this.tick();
+      // tell every animated object to tick forward one frame
+      this.tick();
 
-        this.renderer.render(this.scene, this.camera)
+      // render a frame
+      this.renderer.render(this.scene, this.camera);
     });
   }
 
@@ -23,10 +25,15 @@ class Loop {
   }
 
   tick() {
+    // only call the getDelta function once per frame!
     const delta = clock.getDelta();
-    
-    for(const obj of this.updatables){
-        obj.tick(delta);
+
+    // console.log(
+    //   `The last frame rendered in ${delta * 1000} milliseconds`,
+    // );
+
+    for (const object of this.updatables) {
+      object.tick(delta);
     }
   }
 }

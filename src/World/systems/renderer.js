@@ -1,11 +1,10 @@
-import { WebGLRenderer } from 'three';
+import { WebGLRenderer } from 'https://cdn.skypack.dev/three@0.136.2';
 
 function createRenderer() {
   const renderer = new WebGLRenderer({ antialias: true });
 
   renderer.physicallyCorrectLights = true;
-  renderer.autoClear = false;
-  renderer.setClearColor(0x000000, 0.0);
+
   return renderer;
 }
 
