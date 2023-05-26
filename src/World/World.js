@@ -6,7 +6,7 @@ import { createControls } from './systems/controls.js';
 import { createRenderer } from './systems/renderer.js';
 import { Resizer } from './systems/Resizer.js';
 import { Loop } from './systems/Loop.js';
-import { loadStork } from './components/stork/stork';
+import { loadStork } from './components/stork/stork.js';
 import { Flock } from './components/stork/Flock.js';
 import { createShpere } from './components/sphere.js';
 
